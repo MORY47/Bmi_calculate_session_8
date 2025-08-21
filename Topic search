@@ -1,0 +1,97 @@
+// // 1-SingleChildScrollView
+
+// // Used when you have a single widget that might overflow.
+
+// // Example: wrapping a Column inside it.
+
+// // Scrolls vertically by default, but can be horizontal.
+
+// SingleChildScrollView(
+//   child: Column(
+//     children: [
+//       Text("Item 1"),
+//       Text("Item 2"),
+//       // More items...
+//     ],
+//   ),
+// )
+
+
+// // 2-ListView
+
+// // The most commonly used scrollable widget.
+
+// // Automatically scrollable and supports lazy loading (only renders visible items).
+
+// // Variants:
+
+// // ListView() → static list
+
+// // ListView.builder() → dynamic list (better for large data)
+
+// // ListView.separated() → adds separators
+
+// ListView.builder(
+//   itemCount: 20,
+//   itemBuilder: (context, index) {
+//     return ListTile(title: Text('Item $index'));
+//   },
+// )
+
+
+// // 3-GridView
+
+// // Scrollable grid layout.
+
+// // Supports vertical & horizontal scrolling.
+
+// // Useful for image galleries, product grids, etc.
+
+// GridView.count(
+//   crossAxisCount: 2,
+//   children: List.generate(6, (index) {
+//     return Center(child: Text('Item $index'));
+//   }),
+// )
+
+
+// // 4-CustomScrollView & Slivers
+
+// // Advanced scrolling with slivers.
+
+// // Slivers = portions of scrollable content that can be customized.
+
+// // Example: SliverAppBar, SliverList, SliverGrid.
+
+// CustomScrollView(
+//   slivers: [
+//     SliverAppBar(
+//       floating: true,
+//       expandedHeight: 200,
+//       flexibleSpace: FlexibleSpaceBar(title: Text("Sliver AppBar")),
+//     ),
+//     SliverList(
+//       delegate: SliverChildBuilderDelegate(
+//         (context, index) => ListTile(title: Text('Item $index')),
+//         childCount: 20,
+//       ),
+//     ),
+//   ],
+// )
+
+
+// // 5-PageView
+
+// // Allows swiping between pages.
+
+// // Can scroll horizontally or vertically.
+
+// // Good for onboarding screens, carousels, or tab-based navigation.
+
+// PageView(
+//   children: [
+//     Container(color: Colors.red),
+//     Container(color: Colors.green),
+//     Container(color: Colors.blue),
+//   ],
+// )
